@@ -20,10 +20,11 @@ syn sync clear
 syn case match
 
 " Internal keywords
-syn keyword     rtxKeyWords     and or if equal issuffix isprefix issubstring hasprefix hassuffix startswith endswith else-if else contained
+syn keyword     rtxKeyWords     and or if equal issuffix isprefix issubstring hasprefix hassuffix startswith endswith else contained
 
 " Operator
-syn match       rtxOper /[=:;->.@,_|]/   display
+syn match       rtxOper /[=:;>.@,_|]/   display
+syn match       rtxOper /->/      display
 
 " stuff
 syn region      rtxOutput       start=/{/       end=/}/ contains=rtxOper,rtxKeyWords,rtxString
