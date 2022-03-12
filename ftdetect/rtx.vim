@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.rtx  set filetype=aperecursive
+au BufRead,BufNewFile *.rtx  set filetype=rtx

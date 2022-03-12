@@ -20,17 +20,14 @@ syn sync clear
 syn case match
 
 " Internal keywords
-syn keyword     rtxKeyWords     and or equal issuffix isprefix issubstring
-            \                   hasprefix hassuffix contains startswith endswith
-            \                   if      contained
+syn keyword     rtxKeyWords     and or if equal issuffix isprefix issubstring hasprefix hassuffix startswith endswith contained
 
 " Operator
-syn match       rtxOper /[=;->.@,_|]/   display
+syn match       rtxOper /[=:;->.@,_|]/   display
 
 " stuff
-syn region      rtxOutput       start=/{/       end=/}/ contains=rtxOper,rtxKeyWords
+syn region      rtxOutput       start=/{/       end=/}/ contains=rtxOper,rtxKeyWords,rtxString
 syn region      rtxString       start=/"/       end=/"/ contained
-syn match       rtxVariable     /[[:alnum:]]*/  display
 
 " SpecialChar
 
@@ -43,9 +40,8 @@ syn match       rtxComment      /!.*/   contains=pmatchCommentNotes,pmatchCommen
 
 " Highlights
 highlight def link      rtxKeyWords     Keyword
-highlight def link      rtxOper         Operator
+highlight def link      rtxOper         Special
 highlight def link      rtxString       String
-highlight def link      rtxVariable     Identifier
 highlight def link      rtxCommentInfos SpecialComment
 highlight def link      rtxCommentNotes Todo
 highlight def link      rtxComment      Comment
